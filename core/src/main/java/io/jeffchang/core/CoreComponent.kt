@@ -28,7 +28,6 @@ interface CoreComponent {
 
     fun retrofit(): Retrofit
 
-
     @Component.Builder
     interface Builder {
 
