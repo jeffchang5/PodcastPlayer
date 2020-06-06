@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9f2fc70-bb02-41f4-a9aa-ffbfe8d06702" name="Default Changelist" comment="" />
+    <list default="true" id="d9f2fc70-bb02-41f4-a9aa-ffbfe8d06702" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/PhotoFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/PhotoFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/component/AppComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/component/AppComponent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/di/injector.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/di/injector.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/di/module/PhotoModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/di/module/PhotoModule.kt" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +141,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
