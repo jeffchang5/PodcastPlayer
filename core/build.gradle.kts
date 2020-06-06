@@ -13,6 +13,8 @@ android {
         minSdkVersion(Versions.Project.minSdk)
         targetSdkVersion(Versions.Project.targetSdk)
 
+        buildConfigField("String", "BASE_URL", Constants.BASE_URL)
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         versionCode = 1
         versionName = "1.0"

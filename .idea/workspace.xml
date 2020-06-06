@@ -1,12 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d9f2fc70-bb02-41f4-a9aa-ffbfe8d06702" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/data/Photo.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/data/Response.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/data/service/PhotoService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/di/module/PhotoDataModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/repository/PhotoRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/usecase/GetMalformedPhotosUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/usecase/GetNASAPhotosUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/usecase/GetPhotosUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/io/jeffchang/nasademo/ui/photo/repository/PhotoRepositoryTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/io/jeffchang/core/Result.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/io/jeffchang/core/data/ViewState.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/PhotoFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/PhotoFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/component/AppComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/component/AppComponent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/di/injector.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/di/injector.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/PhotoFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/view/PhotoFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/di/PhotoComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/di/PhotoComponent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/di/injector.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/di/Injector.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/di/module/PhotoModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/di/module/PhotoModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/viewmodel/PhotoViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/viewmodel/PhotoViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_photo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_photo.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildSrc/buildSrc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/buildSrc.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildSrc/src/main/kotlin/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/src/main/kotlin/Constants.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/core/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/core/core.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/jeffchang/core/CoreComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/jeffchang/core/CoreComponent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/jeffchang/core/di/module/NetworkModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/jeffchang/core/di/module/NetworkModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/io/jeffchang/core/ExampleUnitTest.kt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +61,14 @@
   <component name="FavoritesManager">
     <favorites_list name="Nasa Demo" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -47,9 +81,29 @@
   </component>
   <component name="ProjectId" id="1cufJmXksOE2JqDhanRyKvdqeGj" />
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/test/java/io/jeffchang/nasademo/ui/photo/repository" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="io.jeffchang.nasademo.ui.photo.repository" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="io.jeffchang.nasademo.ui.photo.view" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="io.jeffchang.nasademo.ui.photo.usecase" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+      <recent name="groovy.util.GroovyTestCase" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -63,7 +117,41 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Android App.app">
+    <configuration name="PhotoRepositoryTest.get photos return list of photos upon success" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.jeffchang.nasademo.ui.photo.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.jeffchang.nasademo.ui.photo.repository" />
+      <option name="MAIN_CLASS_NAME" value="io.jeffchang.nasademo.ui.photo.repository.PhotoRepositoryTest" />
+      <option name="METHOD_NAME" value="get photos return list of photos upon success" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PhotoRepositoryTest.get photos return list of photos" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.jeffchang.nasademo.ui.photo.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.jeffchang.nasademo.ui.photo.repository" />
+      <option name="MAIN_CLASS_NAME" value="io.jeffchang.nasademo.ui.photo.repository.PhotoRepositoryTest" />
+      <option name="METHOD_NAME" value="get photos return list of photos" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -71,7 +159,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -122,6 +210,12 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Android JUnit.PhotoRepositoryTest.get photos return list of photos" />
+        <item itemvalue="Android JUnit.PhotoRepositoryTest.get photos return list of photos upon success" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -148,5 +242,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/test/java/io/jeffchang/nasademo/ui/photo/repository/PhotoRepositoryTest.kt</url>
+          <line>56</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

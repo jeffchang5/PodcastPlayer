@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="io.jeffchang.nasademo.PhotoFragment"
+        android:name="io.jeffchang.nasademo.ui.photo.view.PhotoFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_photo">
 

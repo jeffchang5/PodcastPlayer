@@ -5,14 +5,15 @@ import io.jeffchang.core.CoreComponent
 import io.jeffchang.core.di.BaseFragmentComponent
 import io.jeffchang.core.di.module.ViewModelModule
 import io.jeffchang.core.scope.FeatureScope
-import io.jeffchang.nasademo.PhotoFragment
+import io.jeffchang.nasademo.ui.photo.di.module.PhotoDataModule
+import io.jeffchang.nasademo.ui.photo.view.PhotoFragment
 import io.jeffchang.nasademo.ui.photo.di.module.PhotoModule
 
 /**
- * Component binding injections for employee related classes
+ * Component binding injections for photo related classes
  */
 @Component(
-    modules = [ViewModelModule::class, PhotoModule::class],
+    modules = [ViewModelModule::class, PhotoModule::class, PhotoDataModule::class],
     dependencies = [CoreComponent::class]
 )
 @FeatureScope
