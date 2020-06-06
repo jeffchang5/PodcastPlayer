@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import io.jeffchang.core.data.ViewState
 import io.jeffchang.nasademo.R
-import io.jeffchang.nasademo.ui.photo.di.inject
+import io.jeffchang.nasademo.ui.photo.inject
 import io.jeffchang.nasademo.ui.photo.viewmodel.PhotoViewModel
 import javax.inject.Inject
 
