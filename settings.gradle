@@ -1,2 +1,3 @@
 rootProject.name='Nasa Demo'
 include ':app'
+include ':core'

@@ -3,6 +3,7 @@ object Versions {
     const val ktlint = "0.36.0"
 
     object Project {
+        const val buildTool = "29.0.2"
         const val compileSdk = 28
         const val minSdk = 23
         const val targetSdk = 28
@@ -50,7 +51,7 @@ object Versions {
     }
 
     object Kotlin {
-        const val kotlin = "1.3.61"
+        const val kotlin = "1.3.71"
     }
 
     object Dagger {
