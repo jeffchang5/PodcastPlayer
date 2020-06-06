@@ -11,7 +11,6 @@ import io.jeffchang.core.onSuccess
 import io.jeffchang.nasademo.ui.photo.data.Photo
 import io.jeffchang.nasademo.ui.photo.usecase.GetMalformedPhotosUseCase
 import io.jeffchang.nasademo.ui.photo.usecase.GetNASAPhotosUseCase
-import io.jeffchang.nasademo.ui.photo.usecase.GetPhotosUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
@@ -22,13 +21,19 @@ import kotlin.coroutines.CoroutineContext
 
 class PhotoViewModel @Inject constructor(
     private val contextProvider: ContextProvider,
-    getPhotosUseCase: GetNASAPhotosUseCase,
+    private val getPhotosUseCase: GetNASAPhotosUseCase,
     getMalformedPhotosUseCase: GetMalformedPhotosUseCase
 ) : ViewModel() {
 
     private val viewState = MutableLiveData<ViewState<List<Photo>>>()
 
     init {
+        getPhotos()
+    }
+
+    fun viewState(): LiveData<ViewState<List<Photo>>> = viewState
+
+    fun getPhotos() {
         launch {
             getPhotosUseCase(Unit)
                 .onSuccess {
@@ -40,8 +45,6 @@ class PhotoViewModel @Inject constructor(
                 }
         }
     }
-
-    fun viewState(): LiveData<ViewState<List<Photo>>> = viewState
 
     private fun launch(
         coroutineContext: CoroutineContext = contextProvider.main,
