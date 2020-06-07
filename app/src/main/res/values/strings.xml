@@ -9,4 +9,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="photo">Photo</string>
+    <string name="empty_list">Nothing from server</string>
+    <string name="network_error">Network Error</string>
 </resources>

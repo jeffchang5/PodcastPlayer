@@ -9,6 +9,7 @@ import io.jeffchang.nasademo.ui.photo.data.Response
 import io.jeffchang.nasademo.ui.photo.data.service.PhotoService
 import kotlinx.coroutines.runBlocking
 import okhttp3.ResponseBody
+import org.amshove.kluent.shouldBeInstanceOf
 import org.junit.Test
 import retrofit2.HttpException
 import kotlin.test.assertTrue
@@ -17,7 +18,7 @@ class PhotoRepositoryTest {
 
     private val photoService: PhotoService = mock()
 
-    private val photoRepository = PhotoRepository(
+    private val photoRepository = DefaultPhotoRepository(
         TestContextProvider(),
         photoService
     )
@@ -32,7 +33,7 @@ class PhotoRepositoryTest {
             val result = photoRepository.getPhotos()
 
             // Then
-            assertTrue { result is Success }
+            result shouldBeInstanceOf Success::class
             verify(photoService, times(1)).getPhotos()
         }
     }
@@ -53,7 +54,7 @@ class PhotoRepositoryTest {
             val result = photoRepository.getPhotos()
 
             // Then
-            assertTrue { result is Failure }
+            result shouldBeInstanceOf Failure::class
             verify(photoService, times(1)).getPhotos()
         }
     }

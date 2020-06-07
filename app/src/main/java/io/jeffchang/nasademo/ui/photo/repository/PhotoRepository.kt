@@ -7,18 +7,27 @@ import io.jeffchang.nasademo.ui.photo.data.Photo
 import io.jeffchang.nasademo.ui.photo.data.service.PhotoService
 import kotlinx.coroutines.withContext
 
-class PhotoRepository(
+
+interface PhotoRepository {
+
+    suspend fun getPhotos(): Result<List<Photo>>
+
+    suspend fun getPhotosWithMissingData(): Result<List<Photo>>
+
+}
+
+class DefaultPhotoRepository(
     private val provider: ContextProvider,
     private val photoService: PhotoService
-) {
+) : PhotoRepository {
 
-    suspend fun getPhotos(): Result<List<Photo>> {
+    override suspend fun getPhotos(): Result<List<Photo>> {
         return withContext(provider.io) {
             safeApiCall(photoService::getPhotos)
         }
     }
 
-    suspend fun getPhotosWithMissingData(): Result<List<Photo>> {
+    override suspend fun getPhotosWithMissingData(): Result<List<Photo>> {
         return withContext(provider.io) {
             safeApiCall(photoService::getPhotosWithMissingData)
         }

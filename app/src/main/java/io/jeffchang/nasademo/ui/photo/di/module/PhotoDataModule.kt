@@ -5,6 +5,7 @@ import dagger.Provides
 import io.jeffchang.core.ContextProvider
 import io.jeffchang.core.scope.FeatureScope
 import io.jeffchang.nasademo.ui.photo.data.service.PhotoService
+import io.jeffchang.nasademo.ui.photo.repository.DefaultPhotoRepository
 import io.jeffchang.nasademo.ui.photo.repository.PhotoRepository
 import io.jeffchang.nasademo.ui.photo.usecase.GetMalformedPhotosUseCase
 import io.jeffchang.nasademo.ui.photo.usecase.GetNASAPhotosUseCase
@@ -23,7 +24,7 @@ class PhotoDataModule {
         contextProvider: ContextProvider,
         photoService: PhotoService
     ): PhotoRepository =
-        PhotoRepository(contextProvider, photoService)
+        DefaultPhotoRepository(contextProvider, photoService)
 
     @Provides
     @FeatureScope

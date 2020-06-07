@@ -1,8 +1,10 @@
 package io.jeffchang.nasademo.ui.photo.data
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 import io.jeffchang.core.DomainMapper
 
+@JsonClass(generateAdapter = true)
 data class Response(
     @Json(name = "photos")
     val photos: List<Photo>
