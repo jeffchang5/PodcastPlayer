@@ -8,7 +8,7 @@ import io.jeffchang.core.ContextProvider
 import io.jeffchang.core.data.ViewState
 import io.jeffchang.core.onFailure
 import io.jeffchang.core.onSuccess
-import io.jeffchang.nasademo.ui.photo.data.Photo
+import io.jeffchang.nasademo.ui.photo.data.model.Photo
 import io.jeffchang.nasademo.ui.photo.usecase.GetMalformedPhotosUseCase
 import io.jeffchang.nasademo.ui.photo.usecase.GetNASAPhotosUseCase
 import kotlinx.coroutines.CoroutineScope

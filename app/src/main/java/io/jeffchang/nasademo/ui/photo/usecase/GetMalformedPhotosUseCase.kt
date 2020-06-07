@@ -2,7 +2,7 @@ package io.jeffchang.nasademo.ui.photo.usecase
 
 import io.jeffchang.core.Result
 import io.jeffchang.core.Success
-import io.jeffchang.nasademo.ui.photo.data.Photo
+import io.jeffchang.nasademo.ui.photo.data.model.Photo
 import io.jeffchang.nasademo.ui.photo.repository.PhotoRepository
 import io.jeffchang.nasademo.ui.photo.viewmodel.SortingStrategy
 

@@ -6,7 +6,7 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import io.jeffchang.core.*
 import io.jeffchang.core.data.ViewState
-import io.jeffchang.nasademo.ui.photo.data.Photo
+import io.jeffchang.nasademo.ui.photo.data.model.Photo
 import io.jeffchang.nasademo.ui.photo.repository.PhotoRepository
 import io.jeffchang.nasademo.ui.photo.usecase.GetMalformedPhotosUseCase
 import io.jeffchang.nasademo.ui.photo.usecase.GetNASAPhotosUseCase

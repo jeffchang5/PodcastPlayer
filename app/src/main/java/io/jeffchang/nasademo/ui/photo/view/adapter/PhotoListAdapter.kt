@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import io.jeffchang.nasademo.R
 import io.jeffchang.nasademo.databinding.ItemPhotoBinding
-import io.jeffchang.nasademo.ui.photo.data.Photo
+import io.jeffchang.nasademo.ui.photo.data.model.Photo
 
 class PhotoListAdapter : ListAdapter<Photo, PhotoListAdapter.PhotoViewHolder>(PhotoDiffCallback()) {
 

@@ -1,4 +1,4 @@
-package io.jeffchang.nasademo.ui.photo.data.service
+package io.jeffchang.nasademo.ui.photo.data.model
 
 import io.jeffchang.nasademo.ui.photo.data.Response
 import retrofit2.http.GET

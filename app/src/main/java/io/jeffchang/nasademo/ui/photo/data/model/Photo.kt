@@ -1,4 +1,4 @@
-package io.jeffchang.nasademo.ui.photo.data
+package io.jeffchang.nasademo.ui.photo.data.model
 
 import com.squareup.moshi.Json
 
