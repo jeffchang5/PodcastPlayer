@@ -21,14 +21,12 @@ import io.jeffchang.nasademo.ui.photo.view.adapter.PhotoListAdapter
 import io.jeffchang.nasademo.ui.photo.viewmodel.PhotoViewModel
 import io.jeffchang.nasademo.ui.photo.viewmodel.SortingStrategy
 import kotlinx.android.synthetic.main.fragment_photo.view.*
-import timber.log.Timber
 import javax.inject.Inject
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
 class PhotoFragment : Fragment() {
-
 
     private var callback: Callback? = null
 
@@ -46,7 +44,11 @@ class PhotoFragment : Fragment() {
     }
 
     private val listener =
-        object : PhotoActivity.OnSortChangedListener {
+        object : PhotoActivity.OnActivityUiInteraction {
+            override fun onUseMalformedChanged(useMalformed: Boolean) {
+                photoViewModel.getPhotos(useMalformed = useMalformed)
+            }
+
             override fun onSortChanged(sortingStrategy: SortingStrategy) {
                 photoViewModel.getPhotos(sortingStrategy)
             }
@@ -123,7 +125,7 @@ class PhotoFragment : Fragment() {
     interface Callback {
 
         fun setOnSortChangedListener(
-            onSortChangedListener: PhotoActivity.OnSortChangedListener?
+            onActivityUiInteraction: PhotoActivity.OnActivityUiInteraction?
         )
     }
 }

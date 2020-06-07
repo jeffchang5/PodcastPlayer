@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import io.jeffchang.core.ContextProvider
+import io.jeffchang.core.Result
 import io.jeffchang.core.data.ViewState
 import io.jeffchang.core.onFailure
 import io.jeffchang.core.onSuccess
@@ -25,11 +26,13 @@ enum class SortingStrategy {
 
 class PhotoViewModel @Inject constructor(
     private val contextProvider: ContextProvider,
-    private val getPhotosUseCase: GetNASAPhotosUseCase,
-    getMalformedPhotosUseCase: GetMalformedPhotosUseCase
+    private val getNASAPhotosUseCase: GetNASAPhotosUseCase,
+    private val getMalformedPhotosUseCase: GetMalformedPhotosUseCase
 ) : ViewModel() {
 
     private var sortingStrategy = SortingStrategy.EARTH_DATE
+
+    private var useMalformed = false
 
     private val viewState = MutableLiveData<ViewState<List<Photo>>>()
 
@@ -39,8 +42,13 @@ class PhotoViewModel @Inject constructor(
 
     fun viewState(): LiveData<ViewState<List<Photo>>> = viewState
 
-    fun getPhotos(sortingStrategy: SortingStrategy = this.sortingStrategy) {
+    fun getPhotos(
+        sortingStrategy: SortingStrategy = this.sortingStrategy,
+        useMalformed: Boolean = this.useMalformed
+    ) {
         this.sortingStrategy = sortingStrategy
+        this.useMalformed = useMalformed
+
         launch {
             getPhotosUseCase(sortingStrategy)
                 .onSuccess {
@@ -54,6 +62,14 @@ class PhotoViewModel @Inject constructor(
                 .onFailure {
                     viewState.postValue(ViewState.Error(it))
                 }
+        }
+    }
+
+    private suspend fun getPhotosUseCase(sortingStrategy: SortingStrategy): Result<List<Photo>> {
+        return if (useMalformed) {
+            getMalformedPhotosUseCase(sortingStrategy)
+        } else {
+            getNASAPhotosUseCase(sortingStrategy)
         }
     }
 

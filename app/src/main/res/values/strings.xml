@@ -15,4 +15,5 @@
     <string name="rover">Rover</string>
     <string name="earth_date">Earth Date</string>
     <string name="camera_type">Camera Type</string>
+    <string name="missing_data">Missing Data</string>
 </resources>
