@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import io.jeffchang.nasademo.R
 import io.jeffchang.nasademo.databinding.ItemPhotoBinding
-import io.jeffchang.nasademo.ui.photo.data.Photo
+import io.jeffchang.nasademo.ui.photo.data.model.Photo
 
 class PhotoListAdapter : ListAdapter<Photo, PhotoListAdapter.PhotoViewHolder>(PhotoDiffCallback()) {
 
@@ -19,7 +19,6 @@ class PhotoListAdapter : ListAdapter<Photo, PhotoListAdapter.PhotoViewHolder>(Ph
             parent,
             false
         )
-
         return PhotoViewHolder(binding)
     }
 
@@ -31,11 +30,13 @@ class PhotoListAdapter : ListAdapter<Photo, PhotoListAdapter.PhotoViewHolder>(Ph
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(photo: Photo) {
-            binding.apply {
-                titleTextView.text = photo.rover
-                teamTextView.text = photo.notes
 
-                Glide.with(root.context)
+            binding.apply {
+                val context = root.context
+                titleTextView.text = photo.rover ?: context.getText(R.string.missing_data)
+                teamTextView.text = photo.notes ?: context.getText(R.string.missing_data)
+
+                Glide.with(context)
                     .load(photo.imgSrc)
                     .apply(
                         RequestOptions()

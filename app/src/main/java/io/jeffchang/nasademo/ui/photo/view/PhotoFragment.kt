@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -20,14 +21,12 @@ import io.jeffchang.nasademo.ui.photo.view.adapter.PhotoListAdapter
 import io.jeffchang.nasademo.ui.photo.viewmodel.PhotoViewModel
 import io.jeffchang.nasademo.ui.photo.viewmodel.SortingStrategy
 import kotlinx.android.synthetic.main.fragment_photo.view.*
-import timber.log.Timber
 import javax.inject.Inject
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
 class PhotoFragment : Fragment() {
-
 
     private var callback: Callback? = null
 
@@ -45,7 +44,11 @@ class PhotoFragment : Fragment() {
     }
 
     private val listener =
-        object : PhotoActivity.OnSortChangedListener {
+        object : PhotoActivity.OnActivityUiInteraction {
+            override fun onUseMalformedChanged(useMalformed: Boolean) {
+                photoViewModel.getPhotos(useMalformed = useMalformed)
+            }
+
             override fun onSortChanged(sortingStrategy: SortingStrategy) {
                 photoViewModel.getPhotos(sortingStrategy)
             }
@@ -85,29 +88,44 @@ class PhotoFragment : Fragment() {
     }
 
     private fun subscribeUI() {
-        photoViewModel.viewState().observe(viewLifecycleOwner, Observer {
-            when (it) {
-                is ViewState.Success -> {
-                    binding.swipeRefreshLayout.isRefreshing = false
-                    photoListAdapter.submitList(it.data)
-                }
-                is ViewState.Empty -> {
-                    Toast.makeText(context, R.string.empty_list, Toast.LENGTH_LONG).show()
-                }
-                is ViewState.Error -> {
-                    Toast.makeText(context, R.string.network_error, Toast.LENGTH_LONG).show()
-                }
-                is ViewState.Loading -> {
-
-                }
+        binding.apply {
+            fun hide() {
+                progressBar.isVisible = true
+                photoRecyclerView.isVisible = false
             }
-        })
+            fun show() {
+                progressBar.isVisible = false
+                photoRecyclerView.isVisible = true
+            }
+            photoViewModel.viewState().observe(viewLifecycleOwner, Observer {
+                binding.swipeRefreshLayout.isRefreshing = false
+                when (it) {
+                    is ViewState.Success -> {
+                        photoListAdapter.submitList(it.data)
+                        show()
+                    }
+                    is ViewState.Empty -> {
+                        Toast.makeText(context, R.string.empty_list, Toast.LENGTH_LONG).show()
+                        show()
+                    }
+                    is ViewState.Error -> {
+                        Toast.makeText(context, R.string.network_error, Toast.LENGTH_LONG).show()
+                        show()
+                    }
+                    is ViewState.Loading -> {
+                        progressBar.isVisible = true
+                        photoRecyclerView.isVisible = false
+                        hide()
+                    }
+                }
+            })
+        }
     }
 
     interface Callback {
 
         fun setOnSortChangedListener(
-            onSortChangedListener: PhotoActivity.OnSortChangedListener?
+            onActivityUiInteraction: PhotoActivity.OnActivityUiInteraction?
         )
     }
 }
