@@ -1,4 +1,4 @@
-package io.jeffchang.nasademo.ui.photo;
+package io.jeffchang.nasademo.ui.photo
 
 import io.jeffchang.nasademo.coreComponent
 import io.jeffchang.nasademo.ui.photo.di.DaggerPhotoComponent

@@ -16,6 +16,8 @@
 Software Architecture, Code Style, Readability, Robustness and using standard Android development practices.
 
 * Unit Tests
+* Modularization
+* Kotlin gradle buildscripts
 * Rotation works
 * Testing JSON with Missing Data
 * Demonstrating use of Coroutines as a viable means of replacing RxJava in current projects.
