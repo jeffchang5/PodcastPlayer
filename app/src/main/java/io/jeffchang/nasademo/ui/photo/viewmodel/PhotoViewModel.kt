@@ -19,11 +19,17 @@ import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
 
+enum class SortingStrategy {
+    ROVER, EARTH_DATE, CAMERA_TYPE
+}
+
 class PhotoViewModel @Inject constructor(
     private val contextProvider: ContextProvider,
     private val getPhotosUseCase: GetNASAPhotosUseCase,
     getMalformedPhotosUseCase: GetMalformedPhotosUseCase
 ) : ViewModel() {
+
+    private var sortingStrategy = SortingStrategy.EARTH_DATE
 
     private val viewState = MutableLiveData<ViewState<List<Photo>>>()
 
@@ -33,9 +39,10 @@ class PhotoViewModel @Inject constructor(
 
     fun viewState(): LiveData<ViewState<List<Photo>>> = viewState
 
-    fun getPhotos() {
+    fun getPhotos(sortingStrategy: SortingStrategy = this.sortingStrategy) {
+        this.sortingStrategy = sortingStrategy
         launch {
-            getPhotosUseCase(Unit)
+            getPhotosUseCase(sortingStrategy)
                 .onSuccess {
                     Timber.d("Received photos")
                     viewState.postValue(ViewState.Success(it))
@@ -52,4 +59,5 @@ class PhotoViewModel @Inject constructor(
     ): Job {
         return viewModelScope.launch(coroutineContext) { block() }
     }
+
 }
