@@ -1,6 +1,6 @@
-package io.jeffchang.nasademo.ui.photo.data.model
+package io.jeffchang.nasademo.ui.photo.data.service
 
-import io.jeffchang.nasademo.ui.photo.data.Response
+import io.jeffchang.nasademo.ui.photo.data.model.Response
 import retrofit2.http.GET
 
 interface PhotoService {

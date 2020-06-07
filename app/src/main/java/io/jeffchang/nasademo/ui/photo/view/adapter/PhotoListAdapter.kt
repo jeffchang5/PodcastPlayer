@@ -30,12 +30,14 @@ class PhotoListAdapter : ListAdapter<Photo, PhotoListAdapter.PhotoViewHolder>(Ph
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(photo: Photo) {
-
             binding.apply {
                 val context = root.context
+
+                // Sets fields or use default values.
                 titleTextView.text = photo.rover ?: context.getText(R.string.missing_data)
                 teamTextView.text = photo.notes ?: context.getText(R.string.missing_data)
 
+                // Binds image with placeholders or defaults.
                 Glide.with(context)
                     .load(photo.imgSrc)
                     .apply(

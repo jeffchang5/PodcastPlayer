@@ -4,7 +4,7 @@ import io.jeffchang.core.ContextProvider
 import io.jeffchang.core.Result
 import io.jeffchang.core.safeApiCall
 import io.jeffchang.nasademo.ui.photo.data.model.Photo
-import io.jeffchang.nasademo.ui.photo.data.model.PhotoService
+import io.jeffchang.nasademo.ui.photo.data.service.PhotoService
 import kotlinx.coroutines.withContext
 
 class DefaultPhotoRepository(

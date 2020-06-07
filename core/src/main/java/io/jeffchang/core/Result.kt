@@ -4,6 +4,7 @@ import com.squareup.moshi.JsonDataException
 import retrofit2.HttpException
 import java.net.UnknownHostException
 
+// Converts details of the API contract to map into domain models that can facilitate cleaner code.
 interface DomainMapper<T : Any> {
     fun mapToDomainModel(): T
 }
@@ -24,6 +25,7 @@ object HostNotFoundNetworkException : NetworkException(message = "Can't connect 
 
 object BadResponseException : NetworkException(message = "Got a bad response from the server")
 
+// Uses Kotlin sealed classes to create more expressive exception handling in our error block.
 private fun catchException(e: Exception): NetworkException {
     return when (e) {
         is HttpException -> KnownNetworkException(e.code(), e.response()?.toString().orEmpty())
@@ -33,11 +35,12 @@ private fun catchException(e: Exception): NetworkException {
     }
 }
 
-
+// Uses Kotlin sealed classes to encode the possible states of a network call.
 sealed class Result<out T : Any>
 data class Success<out T : Any>(val data: T) : Result<T>()
 data class Failure(val networkException: NetworkException) : Result<Nothing>()
 
+// Wraps around api call and maps it to success or failure states using our DomainMapper.
 suspend fun <T : DomainMapper<R>, R : Any> safeApiCall(block: suspend () -> T): Result<R> {
     return try {
         Success(block().mapToDomainModel())

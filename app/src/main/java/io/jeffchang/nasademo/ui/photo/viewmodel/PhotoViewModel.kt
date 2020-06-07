@@ -46,6 +46,7 @@ class PhotoViewModel @Inject constructor(
         sortingStrategy: SortingStrategy = this.sortingStrategy,
         useMalformed: Boolean = this.useMalformed
     ) {
+        // Persists last used settings as defaults
         this.sortingStrategy = sortingStrategy
         this.useMalformed = useMalformed
 

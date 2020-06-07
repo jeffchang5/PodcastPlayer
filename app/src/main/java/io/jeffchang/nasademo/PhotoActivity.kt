@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class PhotoActivity : AppCompatActivity(), PhotoFragment.Callback {
 
-    private var onActivityUiInteraction: OnActivityUiInteraction? = null
+    private var activityUiInteraction: ActivityUiInteraction? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,14 +35,16 @@ class PhotoActivity : AppCompatActivity(), PhotoFragment.Callback {
             R.id.camera_type -> SortingStrategy.CAMERA_TYPE
             else -> return super.onOptionsItemSelected(item)
         }
-        onActivityUiInteraction?.onSortChanged(sort)
+        activityUiInteraction?.onSortChanged(sort)
         return true
     }
 
-    override fun setOnSortChangedListener(onActivityUiInteraction: OnActivityUiInteraction?) {
-        this.onActivityUiInteraction = onActivityUiInteraction
+    // Creates top-down communication between Activity and Fragment.
+    override fun setActivityUiInteraction(activityUiInteraction: ActivityUiInteraction?) {
+        this.activityUiInteraction = activityUiInteraction
     }
 
+    // Toggles between well formed and malformed data.
     private fun initDebugFAB() {
         var useMalformed = false
         debugFab.isVisible = BuildConfig.DEBUG
@@ -60,11 +62,11 @@ class PhotoActivity : AppCompatActivity(), PhotoFragment.Callback {
             }
             val drawable = ContextCompat.getDrawable(this, id)
             debugFab.setImageDrawable(drawable)
-            onActivityUiInteraction?.onUseMalformedChanged(useMalformed)
+            activityUiInteraction?.onUseMalformedChanged(useMalformed)
         }
     }
 
-    interface OnActivityUiInteraction {
+    interface ActivityUiInteraction {
 
         fun onUseMalformedChanged(useMalformed: Boolean)
 

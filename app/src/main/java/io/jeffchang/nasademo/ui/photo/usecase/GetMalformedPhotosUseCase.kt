@@ -6,7 +6,7 @@ import io.jeffchang.nasademo.ui.photo.data.model.Photo
 import io.jeffchang.nasademo.ui.photo.repository.PhotoRepository
 import io.jeffchang.nasademo.ui.photo.viewmodel.SortingStrategy
 
-
+// Duplicated from GetNasaPhotosUseCase. Sole use case is testing malformed data.
 class GetMalformedPhotosUseCase(private val photoRepository: PhotoRepository) : GetPhotosUseCase {
 
     override suspend fun invoke(param: SortingStrategy): Result<List<Photo>> {

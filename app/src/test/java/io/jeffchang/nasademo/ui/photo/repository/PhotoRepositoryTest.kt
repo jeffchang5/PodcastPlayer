@@ -5,8 +5,8 @@ import io.jeffchang.core.Failure
 import io.jeffchang.core.Success
 import io.jeffchang.core.TestContextProvider
 import io.jeffchang.nasademo.ui.photo.data.model.Photo
-import io.jeffchang.nasademo.ui.photo.data.Response
-import io.jeffchang.nasademo.ui.photo.data.model.PhotoService
+import io.jeffchang.nasademo.ui.photo.data.model.Response
+import io.jeffchang.nasademo.ui.photo.data.service.PhotoService
 import kotlinx.coroutines.runBlocking
 import okhttp3.ResponseBody
 import org.amshove.kluent.shouldBeInstanceOf
@@ -28,7 +28,11 @@ class PhotoRepositoryTest {
             // Given
 
             // When
-            whenever(photoService.getPhotos()).doReturn(Response(listOf(Photo())))
+            whenever(photoService.getPhotos()).doReturn(
+                Response(
+                    listOf(Photo())
+                )
+            )
             val result = photoRepository.getPhotos()
 
             // Then
