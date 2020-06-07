@@ -35,6 +35,7 @@ class PhotoFragment : Fragment() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
+    // Kotlin delegate to lazily create viewmodels.
     private val photoViewModel by viewModels<PhotoViewModel> {
         viewModelFactory
     }
@@ -43,8 +44,9 @@ class PhotoFragment : Fragment() {
         PhotoListAdapter()
     }
 
-    private val listener =
-        object : PhotoActivity.OnActivityUiInteraction {
+    // Observes activity UI changes that our fragment needs to be aware of.
+    private val activityUiInteraction =
+        object : PhotoActivity.ActivityUiInteraction {
             override fun onUseMalformedChanged(useMalformed: Boolean) {
                 photoViewModel.getPhotos(useMalformed = useMalformed)
             }
@@ -57,12 +59,12 @@ class PhotoFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         callback = context as? Callback
-        callback?.setOnSortChangedListener(listener)
+        callback?.setActivityUiInteraction(activityUiInteraction)
     }
 
     override fun onDetach() {
         super.onDetach()
-        callback?.setOnSortChangedListener(null)
+        callback?.setActivityUiInteraction(null)
         callback = null
     }
 
@@ -89,14 +91,18 @@ class PhotoFragment : Fragment() {
 
     private fun subscribeUI() {
         binding.apply {
+            // Hides main UI with list. Shows Progress Bar.
             fun hide() {
                 progressBar.isVisible = true
                 photoRecyclerView.isVisible = false
             }
+
+            // Shows main UI with list
             fun show() {
                 progressBar.isVisible = false
                 photoRecyclerView.isVisible = true
             }
+
             photoViewModel.viewState().observe(viewLifecycleOwner, Observer {
                 binding.swipeRefreshLayout.isRefreshing = false
                 when (it) {
@@ -124,8 +130,8 @@ class PhotoFragment : Fragment() {
 
     interface Callback {
 
-        fun setOnSortChangedListener(
-            onActivityUiInteraction: PhotoActivity.OnActivityUiInteraction?
+        fun setActivityUiInteraction(
+            activityUiInteraction: PhotoActivity.ActivityUiInteraction?
         )
     }
 }
