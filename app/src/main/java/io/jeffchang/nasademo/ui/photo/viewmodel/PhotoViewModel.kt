@@ -44,11 +44,15 @@ class PhotoViewModel @Inject constructor(
         launch {
             getPhotosUseCase(sortingStrategy)
                 .onSuccess {
+                    if (it.isEmpty()) {
+                        viewState.postValue(ViewState.Empty())
+                        return@onSuccess
+                    }
                     Timber.d("Received photos")
                     viewState.postValue(ViewState.Success(it))
                 }
                 .onFailure {
-                    // TODO: Handle errors
+                    viewState.postValue(ViewState.Error(it))
                 }
         }
     }

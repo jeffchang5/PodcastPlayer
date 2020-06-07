@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -85,23 +86,38 @@ class PhotoFragment : Fragment() {
     }
 
     private fun subscribeUI() {
-        photoViewModel.viewState().observe(viewLifecycleOwner, Observer {
-            when (it) {
-                is ViewState.Success -> {
-                    binding.swipeRefreshLayout.isRefreshing = false
-                    photoListAdapter.submitList(it.data)
-                }
-                is ViewState.Empty -> {
-                    Toast.makeText(context, R.string.empty_list, Toast.LENGTH_LONG).show()
-                }
-                is ViewState.Error -> {
-                    Toast.makeText(context, R.string.network_error, Toast.LENGTH_LONG).show()
-                }
-                is ViewState.Loading -> {
-
-                }
+        binding.apply {
+            fun hide() {
+                progressBar.isVisible = true
+                photoRecyclerView.isVisible = false
             }
-        })
+            fun show() {
+                progressBar.isVisible = false
+                photoRecyclerView.isVisible = true
+            }
+            photoViewModel.viewState().observe(viewLifecycleOwner, Observer {
+                binding.swipeRefreshLayout.isRefreshing = false
+                when (it) {
+                    is ViewState.Success -> {
+                        photoListAdapter.submitList(it.data)
+                        show()
+                    }
+                    is ViewState.Empty -> {
+                        Toast.makeText(context, R.string.empty_list, Toast.LENGTH_LONG).show()
+                        show()
+                    }
+                    is ViewState.Error -> {
+                        Toast.makeText(context, R.string.network_error, Toast.LENGTH_LONG).show()
+                        show()
+                    }
+                    is ViewState.Loading -> {
+                        progressBar.isVisible = true
+                        photoRecyclerView.isVisible = false
+                        hide()
+                    }
+                }
+            })
+        }
     }
 
     interface Callback {
