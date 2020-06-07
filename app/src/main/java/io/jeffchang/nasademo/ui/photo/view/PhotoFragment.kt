@@ -1,5 +1,6 @@
 package io.jeffchang.nasademo.ui.photo.view
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,18 +12,24 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.jeffchang.core.data.ViewState
+import io.jeffchang.nasademo.PhotoActivity
 import io.jeffchang.nasademo.R
 import io.jeffchang.nasademo.databinding.FragmentPhotoBinding
 import io.jeffchang.nasademo.ui.photo.inject
 import io.jeffchang.nasademo.ui.photo.view.adapter.PhotoListAdapter
 import io.jeffchang.nasademo.ui.photo.viewmodel.PhotoViewModel
+import io.jeffchang.nasademo.ui.photo.viewmodel.SortingStrategy
 import kotlinx.android.synthetic.main.fragment_photo.view.*
+import timber.log.Timber
 import javax.inject.Inject
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
 class PhotoFragment : Fragment() {
+
+
+    private var callback: Callback? = null
 
     private lateinit var binding: FragmentPhotoBinding
 
@@ -35,6 +42,25 @@ class PhotoFragment : Fragment() {
 
     private val photoListAdapter by lazy {
         PhotoListAdapter()
+    }
+
+    private val listener =
+        object : PhotoActivity.OnSortChangedListener {
+            override fun onSortChanged(sortingStrategy: SortingStrategy) {
+                photoViewModel.getPhotos(sortingStrategy)
+            }
+        }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        callback = context as? Callback
+        callback?.setOnSortChangedListener(listener)
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        callback?.setOnSortChangedListener(null)
+        callback = null
     }
 
     override fun onCreateView(
@@ -76,5 +102,12 @@ class PhotoFragment : Fragment() {
                 }
             }
         })
+    }
+
+    interface Callback {
+
+        fun setOnSortChangedListener(
+            onSortChangedListener: PhotoActivity.OnSortChangedListener?
+        )
     }
 }

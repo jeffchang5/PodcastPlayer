@@ -21,7 +21,7 @@ import org.mockito.junit.MockitoRule
 class PhotoViewModelTest {
 
     private val coroutineContext = TestContextProvider()
-    
+
     @get:Rule
     val rule: TestRule = InstantTaskExecutorRule()
 
