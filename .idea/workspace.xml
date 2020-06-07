@@ -11,27 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9f2fc70-bb02-41f4-a9aa-ffbfe8d06702" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/view/adapter/PhotoListAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_check_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_close_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_none_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_photo.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/io/jeffchang/nasademo/ui/photo/viewmodel/PhotoViewModelTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/data/Photo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/data/Photo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/data/Response.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/data/Response.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/view/PhotoFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/view/PhotoFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/viewmodel/PhotoViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/viewmodel/PhotoViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_photo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_photo.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/core/core.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/di/module/PhotoDataModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/di/module/PhotoDataModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/repository/PhotoRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/repository/PhotoRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/io/jeffchang/nasademo/ui/photo/repository/PhotoRepositoryTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/io/jeffchang/nasademo/ui/photo/repository/PhotoRepositoryTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,10 +46,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Kotlin File" />
         <option value="Class" />
         <option value="layoutResourceFile" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -86,12 +70,13 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/test/java/io/jeffchang/nasademo/ui/photo/repository" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/test/java/io/jeffchang/nasademo/ui/photo" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="io.jeffchang.nasademo.ui.photo.viewmodel" />
       <recent name="io.jeffchang.nasademo.ui.photo.repository" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
@@ -108,7 +93,23 @@
       <recent name="$PROJECT_DIR$/app/src/main/res/xml" />
     </key>
   </component>
-  <component name="RunManager" selected="Android App.app">
+  <component name="RunManager" selected="Android JUnit.PhotoViewModelTest.non-empty employee list is successful">
+    <configuration name="PhotoRepositoryTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.jeffchang.nasademo.ui.photo.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.jeffchang.nasademo.ui.photo.repository" />
+      <option name="MAIN_CLASS_NAME" value="io.jeffchang.nasademo.ui.photo.repository.PhotoRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PhotoRepositoryTest.get photos return list of photos upon success" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
@@ -137,6 +138,23 @@
       <option name="PACKAGE_NAME" value="io.jeffchang.nasademo.ui.photo.repository" />
       <option name="MAIN_CLASS_NAME" value="io.jeffchang.nasademo.ui.photo.repository.PhotoRepositoryTest" />
       <option name="METHOD_NAME" value="get photos return list of photos" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PhotoViewModelTest.non-empty employee list is successful" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.jeffchang.nasademo.ui.photo.viewmodel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.jeffchang.nasademo.ui.photo.viewmodel" />
+      <option name="MAIN_CLASS_NAME" value="io.jeffchang.nasademo.ui.photo.viewmodel.PhotoViewModelTest" />
+      <option name="METHOD_NAME" value="non-empty employee list is successful" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -203,6 +221,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Android JUnit.PhotoViewModelTest.non-empty employee list is successful" />
+        <item itemvalue="Android JUnit.PhotoRepositoryTest" />
         <item itemvalue="Android JUnit.PhotoRepositoryTest.get photos return list of photos" />
         <item itemvalue="Android JUnit.PhotoRepositoryTest.get photos return list of photos upon success" />
       </list>
@@ -239,6 +259,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="497" y="335" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1591482701289" />
+    <state x="619" y="248" key="#com.intellij.ide.util.MemberChooser" timestamp="1591488464601">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="619" y="248" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1591488464601" />
     <state x="428" y="287" key="AndroidCreateResourceDirectoryDialog" timestamp="1591482743288">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -252,62 +276,80 @@
     </state>
     <state width="488" height="466" key="DebuggerActiveHint/0.0.1680.1050@0.0.1680.1050" timestamp="1591482440926" />
     <state width="488" height="466" key="DebuggerActiveHint/0.23.1680.1027@0.23.1680.1027" timestamp="1591482399247" />
-    <state width="819" height="253" key="GridCell.Tab.0.bottom" timestamp="1591482727020">
+    <state width="1638" height="294" key="GridCell.Tab.0.bottom" timestamp="1591489472072">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="819" height="253" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1591482727020" />
+    <state width="1638" height="294" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1591489472072" />
     <state width="1638" height="363" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1591481725735" />
-    <state width="819" height="253" key="GridCell.Tab.0.center" timestamp="1591482727019">
+    <state width="1638" height="294" key="GridCell.Tab.0.center" timestamp="1591489472071">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="819" height="253" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1591482727019" />
+    <state width="1638" height="294" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1591489472071" />
     <state width="1638" height="363" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1591481725734" />
-    <state width="819" height="253" key="GridCell.Tab.0.left" timestamp="1591482727017">
+    <state width="1638" height="294" key="GridCell.Tab.0.left" timestamp="1591489472071">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="819" height="253" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1591482727017" />
+    <state width="1638" height="294" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1591489472071" />
     <state width="1638" height="363" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1591481725733" />
-    <state width="819" height="253" key="GridCell.Tab.0.right" timestamp="1591482727019">
+    <state width="1638" height="294" key="GridCell.Tab.0.right" timestamp="1591489472072">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="819" height="253" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1591482727019" />
+    <state width="1638" height="294" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1591489472072" />
     <state width="1638" height="363" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1591481725735" />
-    <state width="1638" height="363" key="GridCell.Tab.1.bottom" timestamp="1591482459998">
+    <state width="1638" height="363" key="GridCell.Tab.1.bottom" timestamp="1591489446640">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="363" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1591482459997" />
+    <state width="1638" height="363" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1591489446640" />
     <state width="1638" height="363" key="GridCell.Tab.1.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1591481725738" />
-    <state width="1638" height="363" key="GridCell.Tab.1.center" timestamp="1591482459997">
+    <state width="1638" height="363" key="GridCell.Tab.1.center" timestamp="1591489446639">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="363" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1591482459997" />
+    <state width="1638" height="363" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1591489446639" />
     <state width="1638" height="363" key="GridCell.Tab.1.center/0.23.1680.1027@0.23.1680.1027" timestamp="1591481725737" />
-    <state width="1638" height="363" key="GridCell.Tab.1.left" timestamp="1591482459996">
+    <state width="1638" height="363" key="GridCell.Tab.1.left" timestamp="1591489446638">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="363" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1591482459996" />
+    <state width="1638" height="363" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1591489446638" />
     <state width="1638" height="363" key="GridCell.Tab.1.left/0.23.1680.1027@0.23.1680.1027" timestamp="1591481725736" />
-    <state width="1638" height="363" key="GridCell.Tab.1.right" timestamp="1591482459997">
+    <state width="1638" height="363" key="GridCell.Tab.1.right" timestamp="1591489446640">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="363" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1591482459997" />
+    <state width="1638" height="363" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1591489446640" />
     <state width="1638" height="363" key="GridCell.Tab.1.right/0.23.1680.1027@0.23.1680.1027" timestamp="1591481725737" />
+    <state x="616" y="310" key="chooseDestDirectoryDialog" timestamp="1591488023321">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="616" y="310" key="chooseDestDirectoryDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1591488023321" />
     <state x="492" y="282" width="722" height="486" key="find.popup" timestamp="1591483357627">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="492" y="282" width="722" height="486" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1591483357627" />
-    <state x="505" y="187" width="670" height="676" key="search.everywhere.popup" timestamp="1591483762193">
+    <state x="543" y="259" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog" timestamp="1591488023354">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="187" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1591483762193" />
+    <state x="543" y="259" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1591488023354" />
+    <state x="505" y="187" width="670" height="676" key="search.everywhere.popup" timestamp="1591488196113">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="187" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1591488196113" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/test/java/io/jeffchang/nasademo/ui/photo/repository/PhotoRepositoryTest.kt</url>
-          <line>56</line>
+          <line>57</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/viewmodel/PhotoViewModel.kt</url>
+          <line>40</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/io/jeffchang/nasademo/ui/photo/usecase/GetNASAPhotosUseCase.kt</url>
+          <line>9</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
