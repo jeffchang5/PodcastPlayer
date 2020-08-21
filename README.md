@@ -8,7 +8,7 @@
 
 **Features**
 
-* The Action Bar has a sort button. You can choose how you want to sort your photos.
+* The Action Bar has a sort button. You can choose how you want to sort your Businesss.
 * The FAB appears on debug builds. Can toggle and see the states of full data and missing data. The missing data wasn't valid JSON so I copied, fixed it, and placed it on a Github Gist.
 
 **Your Focus Areas.**
