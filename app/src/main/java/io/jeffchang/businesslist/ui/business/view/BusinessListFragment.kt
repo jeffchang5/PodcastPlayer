@@ -1,4 +1,4 @@
-package io.jeffchang.nasademo.ui.business.view
+package io.jeffchang.businesslist.ui.business.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,17 +11,14 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import io.jeffchang.businesslist.R
+import io.jeffchang.businesslist.databinding.FragmentBusinessListBinding
+import io.jeffchang.businesslist.ui.business.inject
+import io.jeffchang.businesslist.ui.business.view.adapter.BusinessListAdapter
+import io.jeffchang.businesslist.ui.business.viewmodel.BusinessViewModel
 import io.jeffchang.core.data.ViewState
-import io.jeffchang.nasademo.R
-import io.jeffchang.nasademo.databinding.FragmentBusinessListBinding
-import io.jeffchang.nasademo.ui.business.inject
-import io.jeffchang.nasademo.ui.business.view.adapter.BusinessListAdapter
-import io.jeffchang.nasademo.ui.business.viewmodel.BusinessViewModel
 import javax.inject.Inject
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
 class BusinessListFragment : Fragment() {
 
     private lateinit var binding: FragmentBusinessListBinding

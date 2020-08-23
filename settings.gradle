@@ -1,3 +1,3 @@
-rootProject.name='Nasa Demo'
+rootProject.name='Business List'
 include ':app'
 include ':core'

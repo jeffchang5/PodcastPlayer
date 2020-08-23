@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/BusinessFragment"
-        android:name="io.jeffchang.nasademo.ui.business.view.BusinessListFragment"
+        android:name="io.jeffchang.businesslist.ui.business.view.BusinessListFragment"
         android:label="@string/business_list"
         tools:layout="@layout/fragment_business_list" />
 

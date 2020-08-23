@@ -1,4 +1,4 @@
-package io.jeffchang.nasademo.ui.business.viewmodel
+package io.jeffchang.businesslist.ui.business.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -8,8 +8,8 @@ import io.jeffchang.core.ContextProvider
 import io.jeffchang.core.data.ViewState
 import io.jeffchang.core.onFailure
 import io.jeffchang.core.onSuccess
-import io.jeffchang.nasademo.ui.business.data.model.business.Business
-import io.jeffchang.nasademo.ui.business.usecase.DefaultGetBusinessUseCase
+import io.jeffchang.businesslist.ui.business.data.model.business.Business
+import io.jeffchang.businesslist.ui.business.usecase.DefaultGetBusinessUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch

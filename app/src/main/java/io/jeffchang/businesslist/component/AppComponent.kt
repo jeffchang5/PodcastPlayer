@@ -1,9 +1,9 @@
-package io.jeffchang.nasademo.component
+package io.jeffchang.businesslist.component
 
 import dagger.Component
 import io.jeffchang.core.CoreComponent
 import io.jeffchang.core.scope.AppScope
-import io.jeffchang.nasademo.BusinessListApplication
+import io.jeffchang.businesslist.BusinessListApplication
 
 @AppScope
 @Component(dependencies = [CoreComponent::class])

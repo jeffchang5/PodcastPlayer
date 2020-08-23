@@ -1,4 +1,4 @@
-package io.jeffchang.nasademo.ui.business.viewmodel
+package io.jeffchang.businesslist.ui.business.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.nhaarman.mockitokotlin2.doReturn
@@ -6,9 +6,9 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import io.jeffchang.core.*
 import io.jeffchang.core.data.ViewState
-import io.jeffchang.nasademo.ui.business.repository.BusinessRepository
-import io.jeffchang.nasademo.ui.business.usecase.GetMalformedBusinesssUseCase
-import io.jeffchang.nasademo.ui.business.usecase.DefaultGetBusinessUseCase
+import io.jeffchang.businesslist.ui.business.repository.BusinessRepository
+import io.jeffchang.businesslist.ui.business.usecase.GetMalformedBusinesssUseCase
+import io.jeffchang.businesslist.ui.business.usecase.DefaultGetBusinessUseCase
 import kotlinx.coroutines.runBlocking
 import org.amshove.kluent.shouldBeInstanceOf
 import org.junit.Rule

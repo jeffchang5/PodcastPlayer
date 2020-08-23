@@ -1,4 +1,4 @@
-package io.jeffchang.nasademo
+package io.jeffchang.businesslist
 
 import android.app.Activity
 import android.app.Application
@@ -6,7 +6,7 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 import io.jeffchang.core.CoreComponent
 import io.jeffchang.core.DaggerCoreComponent
-import io.jeffchang.nasademo.component.DaggerAppComponent
+import io.jeffchang.businesslist.component.DaggerAppComponent
 import timber.log.Timber
 
 class BusinessListApplication : Application() {

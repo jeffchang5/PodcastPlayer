@@ -1,10 +1,10 @@
-package io.jeffchang.nasademo.ui.business.repository
+package io.jeffchang.businesslist.ui.business.repository
 
 import com.nhaarman.mockitokotlin2.*
 import io.jeffchang.core.Failure
 import io.jeffchang.core.Success
 import io.jeffchang.core.TestContextProvider
-import io.jeffchang.nasademo.ui.business.data.service.BusinessService
+import io.jeffchang.businesslist.ui.business.data.service.BusinessService
 import kotlinx.coroutines.runBlocking
 import okhttp3.ResponseBody
 import org.amshove.kluent.shouldBeInstanceOf
