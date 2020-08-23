@@ -1,10 +1,13 @@
 package io.jeffchang.businesslist.ui.business.repository
 
 import com.nhaarman.mockitokotlin2.*
+import io.jeffchang.businesslist.ui.business.data.model.business.Business
+import io.jeffchang.businesslist.ui.business.data.model.business.Region
+import io.jeffchang.businesslist.ui.business.data.model.business.Response
+import io.jeffchang.businesslist.ui.business.data.service.BusinessService
 import io.jeffchang.core.Failure
 import io.jeffchang.core.Success
 import io.jeffchang.core.TestContextProvider
-import io.jeffchang.businesslist.ui.business.data.service.BusinessService
 import kotlinx.coroutines.runBlocking
 import okhttp3.ResponseBody
 import org.amshove.kluent.shouldBeInstanceOf
@@ -13,50 +16,54 @@ import retrofit2.HttpException
 
 class BusinessRepositoryTest {
 
-    private val BusinessService: BusinessService = mock()
+    private val businessService: BusinessService = mock()
 
-    private val BusinessRepository = DefaultBusinessRepository(
+    private val businessRepository = DefaultBusinessRepository(
         TestContextProvider(),
-        BusinessService
+        businessService
     )
 
     @Test
-    fun `get Businesss return list of Businesss upon success`() {
+    fun `getBusinesses returns list of businesses upon success`() {
         runBlocking {
             // Given
 
             // When
-            whenever(BusinessService.getBusinesss()).doReturn(
+            whenever(businessService.getBusinesses(any(), any())).doReturn(
                 Response(
-                    listOf(Business())
+                    total = 1,
+                    region = Region(),
+                    businesses = listOf(
+                        Business()
+                    )
                 )
             )
-            val result = BusinessRepository.getBusinesses()
+            val result = businessRepository.getBusinesses("Los Angeles")
 
             // Then
             result shouldBeInstanceOf Success::class
-            verify(BusinessService, times(1)).getBusinesss()
+            verify(businessService, times(1)).getBusinesses(any(), any())
         }
     }
 
     @Test
-    fun `get Businesss on http exception returns failure`() {
+    fun `getBusinesses on http exception returns failure`() {
         runBlocking {
             // Given
 
             // When
-            whenever(BusinessService.getBusinesss()).thenThrow(
+            whenever(businessService.getBusinesses(any(), any())).thenThrow(
                 HttpException(
                     retrofit2.Response.error<Response>(
                         404, ResponseBody.create(null, "")
                     )
                 )
             )
-            val result = BusinessRepository.getBusinesses()
+            val result = businessRepository.getBusinesses("Los Angeles")
 
             // Then
             result shouldBeInstanceOf Failure::class
-            verify(BusinessService, times(1)).getBusinesss()
+            verify(businessService, times(1)).getBusinesses(any(), any())
         }
     }
 
