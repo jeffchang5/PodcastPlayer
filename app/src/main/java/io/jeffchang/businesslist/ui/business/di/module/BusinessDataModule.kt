@@ -1,13 +1,13 @@
-package io.jeffchang.nasademo.ui.business.di.module
+package io.jeffchang.businesslist.ui.business.di.module
 
 import dagger.Module
 import dagger.Provides
 import io.jeffchang.core.ContextProvider
 import io.jeffchang.core.scope.FeatureScope
-import io.jeffchang.nasademo.ui.business.data.service.BusinessService
-import io.jeffchang.nasademo.ui.business.repository.DefaultBusinessRepository
-import io.jeffchang.nasademo.ui.business.repository.BusinessRepository
-import io.jeffchang.nasademo.ui.business.usecase.DefaultGetBusinessUseCase
+import io.jeffchang.businesslist.ui.business.data.service.BusinessService
+import io.jeffchang.businesslist.ui.business.repository.DefaultBusinessRepository
+import io.jeffchang.businesslist.ui.business.repository.BusinessRepository
+import io.jeffchang.businesslist.ui.business.usecase.DefaultGetBusinessUseCase
 import retrofit2.Retrofit
 
 @Module

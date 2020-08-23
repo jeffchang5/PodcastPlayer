@@ -1,6 +1,6 @@
-package io.jeffchang.nasademo.ui.business.data.service
+package io.jeffchang.businesslist.ui.business.data.service
 
-import io.jeffchang.nasademo.ui.business.data.model.business.Response
+import io.jeffchang.businesslist.ui.business.data.model.business.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 

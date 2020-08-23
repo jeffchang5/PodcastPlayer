@@ -1,4 +1,4 @@
-package io.jeffchang.nasademo.ui.business.view.adapter
+package io.jeffchang.businesslist.ui.business.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import io.jeffchang.nasademo.R
-import io.jeffchang.nasademo.databinding.ItemBusinessBinding
-import io.jeffchang.nasademo.ui.business.data.model.business.Business
+import io.jeffchang.businesslist.R
+import io.jeffchang.businesslist.databinding.ItemBusinessBinding
+import io.jeffchang.businesslist.ui.business.data.model.business.Business
 
 class BusinessListAdapter
     : ListAdapter<Business, BusinessListAdapter.BusinessViewHolder>(BusinessDiffCallback()) {

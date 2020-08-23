@@ -1,4 +1,4 @@
-package io.jeffchang.nasademo.ui.business.data.model.business
+package io.jeffchang.businesslist.ui.business.data.model.business
 
 import com.squareup.moshi.Json
 import io.jeffchang.core.DomainMapper
