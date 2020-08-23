@@ -5,11 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import io.jeffchang.core.ContextProvider
-import io.jeffchang.core.Result
 import io.jeffchang.core.data.ViewState
 import io.jeffchang.core.onFailure
 import io.jeffchang.core.onSuccess
-import io.jeffchang.nasademo.ui.business.data.model.Business
+import io.jeffchang.nasademo.ui.business.data.model.business.Business
 import io.jeffchang.nasademo.ui.business.usecase.DefaultGetBusinessUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
@@ -34,7 +33,7 @@ class BusinessViewModel @Inject constructor(
 
     fun getBusinesses() {
         launch {
-            getBusinessUseCase()
+            getBusinessUseCase("coffee")
                 .onSuccess {
                     if (it.isEmpty()) {
                         viewState.postValue(ViewState.Empty())

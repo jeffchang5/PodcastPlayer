@@ -6,7 +6,6 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import io.jeffchang.core.*
 import io.jeffchang.core.data.ViewState
-import io.jeffchang.nasademo.ui.business.data.model.Business
 import io.jeffchang.nasademo.ui.business.repository.BusinessRepository
 import io.jeffchang.nasademo.ui.business.usecase.GetMalformedBusinesssUseCase
 import io.jeffchang.nasademo.ui.business.usecase.DefaultGetBusinessUseCase

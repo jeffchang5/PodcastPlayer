@@ -10,7 +10,7 @@ buildscript {
         maven("https://plugins.gradle.org/m2/")
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:4.0.0")
+        classpath("com.android.tools.build:gradle:4.0.1")
         classpath("org.jlleitschuh.gradle:ktlint-gradle:${Versions.ktlintPlugin}")
         classpath(kotlin("gradle-plugin", version = "1.3.50"))
     }

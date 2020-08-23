@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import io.jeffchang.nasademo.R
 import io.jeffchang.nasademo.databinding.ItemBusinessBinding
-import io.jeffchang.nasademo.ui.business.data.model.Business
+import io.jeffchang.nasademo.ui.business.data.model.business.Business
 
 class BusinessListAdapter
     : ListAdapter<Business, BusinessListAdapter.BusinessViewHolder>(BusinessDiffCallback()) {
@@ -35,12 +35,12 @@ class BusinessListAdapter
                 val context = root.context
 
                 // Sets fields or use default values.
-                titleTextView.text = business.rover ?: context.getText(R.string.missing_data)
-                teamTextView.text = business.notes ?: context.getText(R.string.missing_data)
+                titleTextView.text = business.name ?: context.getText(R.string.missing_data)
+                teamTextView.text = business.alias ?: context.getText(R.string.missing_data)
 
                 // Binds image with placeholders or defaults.
                 Glide.with(context)
-                    .load(business.imgSrc)
+                    .load(business.imageUrl)
                     .apply(
                         RequestOptions()
                             .error(R.drawable.ic_baseline_none_24)

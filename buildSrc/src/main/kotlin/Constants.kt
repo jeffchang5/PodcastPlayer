@@ -1,5 +1,5 @@
 object Constants {
 
-    const val BASE_URL = "\"https://mars-Businesss.s3-us-west-2.amazonaws.com/\""
-
+    const val YELP_API_URL = "\"https://api.yelp.com/v3/\""
+    
 }
