@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Business List</string>
+    <string name="app_name">Podcast Player</string>
     <string name="action_sort_by">Sort By</string>
 
     <string name="Business">Business</string>

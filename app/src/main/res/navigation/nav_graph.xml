@@ -7,8 +7,8 @@
 
     <fragment
         android:id="@+id/BusinessFragment"
-        android:name="io.jeffchang.businesslist.ui.business.view.BusinessListFragment"
+        android:name="io.jeffchang.podcast.ui.podcast.view.PodcastListFragment"
         android:label="@string/business_list"
-        tools:layout="@layout/fragment_business_list" />
+        tools:layout="@layout/fragment_podcast_list" />
 
 </navigation>
