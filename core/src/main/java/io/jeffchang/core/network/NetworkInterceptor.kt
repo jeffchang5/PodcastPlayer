@@ -9,7 +9,10 @@ class AuthInterceptor : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val newRequest: Request = chain.request().newBuilder()
-            .addHeader("Authorization", "Bearer ${BuildConfig.YELP_API_KEY}")
+            .addHeader(
+                "X-ListenAPI-Key",
+                BuildConfig.LISTEN_NOTES_API_KEY
+            )
             .build()
         return chain.proceed(newRequest)
     }

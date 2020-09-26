@@ -17,12 +17,11 @@
         tools:targetApi="n">
 
         <activity
-            android:name="io.jeffchang.businesslist.BusinessActivity"
+            android:name="io.jeffchang.businesslist.PodcastListActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

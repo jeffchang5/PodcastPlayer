@@ -40,7 +40,7 @@ class NetworkModule {
         return OkHttpClient.Builder()
             .cache(cache)
             .addInterceptor(authInterceptor)
-            .connectTimeout(10, TimeUnit.SECONDS)
+            .connectTimeout(5, TimeUnit.SECONDS)
             .build()
     }
 

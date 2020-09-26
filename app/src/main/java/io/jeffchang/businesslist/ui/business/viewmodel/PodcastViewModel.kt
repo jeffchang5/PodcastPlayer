@@ -4,12 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import io.jeffchang.businesslist.ui.business.data.model.business.ResultsItem
+import io.jeffchang.businesslist.ui.business.usecase.GetPodcastUseCase
 import io.jeffchang.core.ContextProvider
 import io.jeffchang.core.data.ViewState
 import io.jeffchang.core.onFailure
 import io.jeffchang.core.onSuccess
-import io.jeffchang.businesslist.ui.business.data.model.business.Business
-import io.jeffchang.businesslist.ui.business.usecase.DefaultGetBusinessUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
@@ -18,28 +18,24 @@ import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
 
-class BusinessViewModel @Inject constructor(
+class PodcastViewModel @Inject constructor(
     private val contextProvider: ContextProvider,
-    private val getBusinessUseCase: DefaultGetBusinessUseCase
+    private val getBusinessUseCase: GetPodcastUseCase
 ) : ViewModel() {
 
-    private val viewState = MutableLiveData<ViewState<List<Business>>>()
+    private val viewState = MutableLiveData<ViewState<List<ResultsItem>>>()
 
-    init {
-        getBusinesses()
-    }
+    fun viewState(): LiveData<ViewState<List<ResultsItem>>> = viewState
 
-    fun viewState(): LiveData<ViewState<List<Business>>> = viewState
-
-    fun getBusinesses() {
+    fun getBusinesses(q: String = "Joe Rogan") {
         launch {
-            getBusinessUseCase("coffee")
+            getBusinessUseCase(q)
                 .onSuccess {
                     if (it.isEmpty()) {
                         viewState.postValue(ViewState.Empty())
                         return@onSuccess
                     }
-                    Timber.d("Received Businesses")
+                    Timber.d("Received podcasts ")
                     viewState.postValue(ViewState.Success(it))
                 }
                 .onFailure {

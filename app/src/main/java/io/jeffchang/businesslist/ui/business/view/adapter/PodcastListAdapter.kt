@@ -9,10 +9,10 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import io.jeffchang.businesslist.R
 import io.jeffchang.businesslist.databinding.ItemBusinessBinding
-import io.jeffchang.businesslist.ui.business.data.model.business.Business
+import io.jeffchang.businesslist.ui.business.data.model.business.ResultsItem
 
-class BusinessListAdapter
-    : ListAdapter<Business, BusinessListAdapter.BusinessViewHolder>(BusinessDiffCallback()) {
+class PodcastListAdapter
+    : ListAdapter<ResultsItem, PodcastListAdapter.BusinessViewHolder>(BusinessDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BusinessViewHolder {
         val binding = ItemBusinessBinding.inflate(
@@ -30,17 +30,17 @@ class BusinessListAdapter
     class BusinessViewHolder(private val binding: ItemBusinessBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(business: Business) {
+        fun bind(business: ResultsItem) {
             binding.apply {
                 val context = root.context
 
                 // Sets fields or use default values.
-                titleTextView.text = business.name ?: context.getText(R.string.missing_data)
-                teamTextView.text = business.alias ?: context.getText(R.string.missing_data)
+                titleTextView.text = business.titleOriginal ?: context.getText(R.string.missing_data)
+                teamTextView.text = business.podcast?.publisherOriginal ?: context.getText(R.string.missing_data)
 
                 // Binds image with placeholders or defaults.
                 Glide.with(context)
-                    .load(business.imageUrl)
+                    .load(business.thumbnail)
                     .apply(
                         RequestOptions()
                             .error(R.drawable.ic_baseline_none_24)
@@ -52,11 +52,11 @@ class BusinessListAdapter
         }
     }
 
-    private class BusinessDiffCallback : DiffUtil.ItemCallback<Business>() {
-        override fun areItemsTheSame(oldItem: Business, newItem: Business): Boolean =
+    private class BusinessDiffCallback : DiffUtil.ItemCallback<ResultsItem>() {
+        override fun areItemsTheSame(oldItem: ResultsItem, newItem: ResultsItem): Boolean =
             oldItem === newItem
 
-        override fun areContentsTheSame(oldItem: Business, newItem: Business): Boolean =
+        override fun areContentsTheSame(oldItem: ResultsItem, newItem: ResultsItem): Boolean =
             oldItem == newItem
     }
 }

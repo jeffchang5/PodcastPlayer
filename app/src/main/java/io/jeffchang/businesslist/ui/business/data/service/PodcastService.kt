@@ -4,12 +4,11 @@ import io.jeffchang.businesslist.ui.business.data.model.business.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface BusinessService {
+interface PodcastService {
 
-    @GET("/v3/businesses/search")
-    suspend fun getBusinesses(
-        @Query("term") term: String,
-        @Query("location") location: String = "Los Angeles"
+    @GET("/api/v2/search")
+    suspend fun searchPodcasts(
+        @Query("q") term: String
     ): Response
 
 }

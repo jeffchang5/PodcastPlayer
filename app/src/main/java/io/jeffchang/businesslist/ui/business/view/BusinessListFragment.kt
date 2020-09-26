@@ -14,8 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import io.jeffchang.businesslist.R
 import io.jeffchang.businesslist.databinding.FragmentBusinessListBinding
 import io.jeffchang.businesslist.ui.business.inject
-import io.jeffchang.businesslist.ui.business.view.adapter.BusinessListAdapter
-import io.jeffchang.businesslist.ui.business.viewmodel.BusinessViewModel
+import io.jeffchang.businesslist.ui.business.view.adapter.PodcastListAdapter
+import io.jeffchang.businesslist.ui.business.viewmodel.PodcastViewModel
 import io.jeffchang.core.data.ViewState
 import javax.inject.Inject
 
@@ -27,12 +27,12 @@ class BusinessListFragment : Fragment() {
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
     // Kotlin delegate to lazily create viewmodels.
-    private val businessViewModel by viewModels<BusinessViewModel> {
+    private val businessViewModel by viewModels<PodcastViewModel> {
         viewModelFactory
     }
 
-    private val businessListAdapter by lazy {
-        BusinessListAdapter()
+    private val podcastListAdapter by lazy {
+        PodcastListAdapter()
     }
 
     override fun onCreateView(
@@ -47,13 +47,14 @@ class BusinessListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            businessListRecyclerView.adapter = businessListAdapter
+            businessListRecyclerView.adapter = podcastListAdapter
             businessListRecyclerView.layoutManager = LinearLayoutManager(context)
             swipeRefreshLayout.setOnRefreshListener {
                 businessViewModel.getBusinesses()
             }
         }
         subscribeUI()
+        businessViewModel.getBusinesses()
     }
 
     private fun subscribeUI() {
@@ -74,7 +75,7 @@ class BusinessListFragment : Fragment() {
                 binding.swipeRefreshLayout.isRefreshing = false
                 when (it) {
                     is ViewState.Success -> {
-                        businessListAdapter.submitList(it.data)
+                        podcastListAdapter.submitList(it.data)
                         show()
                     }
                     is ViewState.Empty -> {

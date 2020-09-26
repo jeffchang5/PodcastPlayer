@@ -5,14 +5,14 @@ import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 import io.jeffchang.core.di.ViewModelKey
-import io.jeffchang.businesslist.ui.business.viewmodel.BusinessViewModel
+import io.jeffchang.businesslist.ui.business.viewmodel.PodcastViewModel
 
 @Module
 abstract class BusinessModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(BusinessViewModel::class)
-    abstract fun bindBusinessViewModel(viewModel: BusinessViewModel): ViewModel
+    @ViewModelKey(PodcastViewModel::class)
+    abstract fun bindBusinessViewModel(viewModel: PodcastViewModel): ViewModel
 
 }
