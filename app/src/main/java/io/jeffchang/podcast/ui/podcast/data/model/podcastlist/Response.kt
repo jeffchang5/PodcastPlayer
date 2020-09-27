@@ -1,7 +1,9 @@
 package io.jeffchang.podcast.ui.podcast.data.model.podcastlist
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
 import io.jeffchang.core.DomainMapper
+import kotlinx.android.parcel.Parcelize
 
 data class Response(
 	val took: Double? = null,
@@ -11,11 +13,12 @@ data class Response(
 	val results: List<PodcastItem>
 ) : DomainMapper<List<PodcastItem>> {
 
-	override fun mapToDomainModel(): List<PodcastItem> {
-		return results
-	}
+    override fun mapToDomainModel(): List<PodcastItem> {
+        return results
+    }
 }
 
+@Parcelize
 data class PodcastItem(
 	val image: String? = null,
 	val thumbnail: String? = null,
@@ -34,10 +37,10 @@ data class PodcastItem(
 	val podcast: Podcast,
 	val audio: String? = null,
 	val id: String? = null,
-	val pubDateMs: Long? = null,
-	val transcriptsHighlighted: List<Any?>? = null
-)
+	val pubDateMs: Long? = null
+) : Parcelable
 
+@Parcelize
 data class Podcast(
 	val titleHighlighted: String? = null,
 	val titleOriginal: String? = null,
@@ -50,5 +53,5 @@ data class Podcast(
 	val id: String? = null,
 	val genreIds: List<Int?>? = null,
 	val listennotesUrl: String? = null
-)
+) : Parcelable
 

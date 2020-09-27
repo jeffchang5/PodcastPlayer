@@ -1,6 +1,7 @@
 object Versions {
     const val ktlintPlugin = "9.2.1"
     const val ktlint = "0.36.0"
+    const val navVersion = "2.3.0"
 
     object Project {
         const val buildTool = "29.0.2"
@@ -55,7 +56,7 @@ object Versions {
     }
 
     object Dagger {
-        const val dagger  = "2.27"
+        const val dagger = "2.27"
     }
 
     object Facebook {

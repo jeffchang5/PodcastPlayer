@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("kapt")
+    id("kotlin-android-extensions")
 }
 
 android {
@@ -44,6 +45,8 @@ dependencies {
     implementation(Deps.AndroidX.navigationKtx)
     implementation(Deps.AndroidX.navigationUi)
 
+    implementation("com.google.android.exoplayer:exoplayer:2.12.0")
+
     debugImplementation(Deps.Facebook.soLoader)
     debugImplementation(Deps.Facebook.flipper)
 
@@ -52,3 +55,5 @@ dependencies {
 
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 }
+
+apply(plugin = "androidx.navigation.safeargs.kotlin")

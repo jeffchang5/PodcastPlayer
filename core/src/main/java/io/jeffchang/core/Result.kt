@@ -23,7 +23,7 @@ object UnknownNetworkException : NetworkException(message = "Unknown HTTP except
 
 object HostNotFoundNetworkException : NetworkException(message = "Can't connect to the host")
 
-object BadResponseException : NetworkException(message = "Got a bad response from the server")
+object BadResponseException : NetworkException(message = "Malformed JSON")
 
 // Uses Kotlin sealed classes to create more expressive exception handling in our error block.
 private fun catchException(e: Exception): NetworkException {

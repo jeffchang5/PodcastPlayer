@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.jeffchang.podcast.databinding.FragmentPodcastListBinding
 import io.jeffchang.podcast.R
@@ -17,6 +18,8 @@ import io.jeffchang.podcast.ui.podcast.inject
 import io.jeffchang.podcast.ui.podcast.view.adapter.PodcastListAdapter
 import io.jeffchang.podcast.ui.podcast.viewmodel.PodcastViewModel
 import io.jeffchang.core.data.ViewState
+import io.jeffchang.podcast.ui.current.CurrentPodcastFragment
+import io.jeffchang.podcast.ui.podcast.data.model.podcastlist.PodcastItem
 import javax.inject.Inject
 
 class PodcastListFragment : Fragment() {
@@ -32,7 +35,7 @@ class PodcastListFragment : Fragment() {
     }
 
     private val podcastListAdapter by lazy {
-        PodcastListAdapter()
+        PodcastListAdapter(::navigateToPodcastFragment)
     }
 
     override fun onCreateView(
@@ -50,11 +53,14 @@ class PodcastListFragment : Fragment() {
             podcastListRecyclerView.adapter = podcastListAdapter
             podcastListRecyclerView.layoutManager = LinearLayoutManager(context)
             swipeRefreshLayout.setOnRefreshListener {
-                podcastListViewModel.getBusinesses()
+                podcastListViewModel.getPodcasts()
             }
         }
         subscribeUI()
-        podcastListViewModel.getBusinesses()
+    }
+
+    private fun navigateToPodcastFragment(podcast: PodcastItem) {
+        PodcastListFragmentDirections.actionBusinessFragmentToCurrentPodcastFragment(podcast)
     }
 
     private fun subscribeUI() {

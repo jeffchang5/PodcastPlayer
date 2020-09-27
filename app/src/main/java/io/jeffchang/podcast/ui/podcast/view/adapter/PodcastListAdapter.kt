@@ -12,7 +12,9 @@ import io.jeffchang.podcast.databinding.ItemPodcastBinding
 
 import io.jeffchang.podcast.ui.podcast.data.model.podcastlist.PodcastItem
 
-class PodcastListAdapter
+class PodcastListAdapter(
+    private val onPodcastClick: (podcast: PodcastItem) -> Unit
+)
     : ListAdapter<PodcastItem, PodcastListAdapter.PodcastViewHolder>(PodcastItemCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PodcastViewHolder {
@@ -21,15 +23,26 @@ class PodcastListAdapter
             parent,
             false
         )
-        return PodcastViewHolder(binding)
+        return PodcastViewHolder(binding) { position ->
+            onPodcastClick.invoke(getItem(position))
+        }
     }
 
     override fun onBindViewHolder(holder: PodcastViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
 
-    class PodcastViewHolder(private val binding: ItemPodcastBinding) :
+    class PodcastViewHolder(
+        private val binding: ItemPodcastBinding,
+        private val onPodcastClick: (position: Int) -> Unit
+    ) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.root.setOnClickListener {
+                onPodcastClick.invoke(adapterPosition)
+            }
+        }
 
         fun bind(business: PodcastItem) {
             binding.apply {
@@ -37,7 +50,7 @@ class PodcastListAdapter
 
                 // Sets fields or use default values.
                 titleTextView.text = business.titleOriginal ?: context.getText(R.string.missing_data)
-                teamTextView.text = business.podcast?.publisherOriginal ?: context.getText(R.string.missing_data)
+                teamTextView.text = business.podcast.publisherOriginal ?: context.getText(R.string.missing_data)
 
                 // Binds image with placeholders or defaults.
                 Glide.with(context)

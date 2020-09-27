@@ -6,5 +6,6 @@
     <string name="empty_list">Nothing from server</string>
     <string name="network_error">Network Error</string>
     <string name="missing_data">Missing Data</string>
-    <string name="business_list">Business List</string>
+    <string name="podcasts">Podcasts</string>
+    <string name="current">Current</string>
 </resources>

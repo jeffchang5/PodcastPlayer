@@ -13,6 +13,7 @@ buildscript {
         classpath("com.android.tools.build:gradle:4.0.1")
         classpath("org.jlleitschuh.gradle:ktlint-gradle:${Versions.ktlintPlugin}")
         classpath(kotlin("gradle-plugin", version = "1.3.50"))
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navVersion}")
     }
 }
 

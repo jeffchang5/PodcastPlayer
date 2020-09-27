@@ -25,9 +25,13 @@ class PodcastViewModel @Inject constructor(
 
     private val viewState = MutableLiveData<ViewState<List<PodcastItem>>>()
 
+    init {
+        getPodcasts()
+    }
+
     fun viewState(): LiveData<ViewState<List<PodcastItem>>> = viewState
 
-    fun getBusinesses(q: String = "Joe Rogan") {
+    fun getPodcasts(q: String = "Joe Rogan") {
         launch {
             getBusinessUseCase(q)
                 .onSuccess {
